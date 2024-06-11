@@ -1,0 +1,154 @@
+<?php
+
+namespace App\$NAMESPACE$;
+
+use App\Models\$CLASS_NAME$;
+use App\Models\Utility;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Support\Facades\DB;
+use App\Repositories\ImageRepository;
+
+use Throwable;
+
+class $CLASS_NAME$Repository
+{
+
+    private ImageRepository $imageRepository;
+
+    public function __construct(ImageRepository $imageRepository)
+    {
+        $this->imageRepository = $imageRepository;
+
+    }
+
+
+
+    public function store($request): array
+    {
+        DB::beginTransaction();
+
+        try {
+
+            $$VARIABLE_NAME$ = new $CLASS_NAME$();
+
+
+$FIELDS$
+
+
+
+
+
+            $$VARIABLE_NAME$->save();
+
+
+
+            DB::commit();
+            return ['status' => true, 'code' => 200, 'data' => $$VARIABLE_NAME$];
+        } catch (ModelNotFoundException $e) {
+            DB::rollBack();
+
+            return [
+                'status' => false,
+                'code' => 404,
+                'message' => __('errors.404')
+            ];
+
+        } catch (Throwable $e) {
+            DB::rollBack();
+
+            return [
+                'status' => false,
+                'code' => 502,
+                'message' => __('errors.502')
+            ];
+
+
+        }
+    }
+
+
+    /**
+     * @param $request
+     * @param $CLASS_NAME$ $$VARIABLE_NAME$
+     * @return array
+     */
+    public function update($request, $CLASS_NAME$ $$VARIABLE_NAME$): array
+    {
+        DB::beginTransaction();
+
+        try {
+
+$UPDATE_FIELDS$
+            $$VARIABLE_NAME$->update();
+
+            DB::commit();
+
+            return ['status' => true, 'code' => 200, 'data' => $$VARIABLE_NAME$];
+
+
+        } catch (ModelNotFoundException $e) {
+            DB::rollBack();
+
+            return [
+                'status' => false,
+                'code' => 404,
+                'message' => __('errors.404')
+            ];
+
+        } catch (Throwable $e) {
+            DB::rollBack();
+
+            return [
+                'status' => false,
+                'code' => 502,
+                'message' => __('errors.502')
+            ];
+
+
+        }
+    }
+
+
+
+    public function destroy($CLASS_NAME$ $$VARIABLE_NAME$): array
+    {
+        DB::beginTransaction();
+
+        try {
+            $DELETE_FIELDS$
+
+
+
+
+            $$VARIABLE_NAME$->delete();
+
+            DB::commit();
+
+            return ['status' => true, 'code' => 200, 'data' => $$VARIABLE_NAME$];
+
+
+        } catch (ModelNotFoundException $e) {
+            DB::rollBack();
+
+            return [
+                'status' => false,
+                'code' => 404,
+                'message' => __('errors.404')
+            ];
+
+        } catch (Throwable $e) {
+            DB::rollBack();
+
+            return [
+                'status' => false,
+                'code' => 502,
+                'message' => __('errors.502')
+            ];
+
+
+        }
+    }
+
+
+
+}

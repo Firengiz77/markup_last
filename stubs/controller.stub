@@ -1,0 +1,117 @@
+<?php
+namespace $NAMESPACE$;
+
+
+use App\Http\Requests\$CLASS_NAME$\Store$CLASS_NAME$Request;
+use App\Http\Requests\$CLASS_NAME$\Update$CLASS_NAME$Request;
+use App\Models\$CLASS_NAME$;
+use App\Repositories\$CLASS_NAME$Repository;
+
+class $CLASS_NAME$Controller extends Controller
+{
+
+
+    private $CLASS_NAME$Repository $$VARIABLE_NAME$Repository;
+
+    public function __construct($CLASS_NAME$Repository $$VARIABLE_NAME$Repository)
+    {
+        $this->$VARIABLE_NAME$Repository = $$VARIABLE_NAME$Repository;
+
+    }
+    /**
+     * Display a listing of the resource.
+     */
+    public function index(): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\Foundation\Application
+    {
+        $$VARIABLE_NAME$s    = $CLASS_NAME$::all();
+
+        return view('$VARIABLE_NAME$.index', compact('$VARIABLE_NAME$s'));
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create(): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\Foundation\Application
+    {
+        return view('$VARIABLE_NAME$.create');
+
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Store$CLASS_NAME$Request $request): \Illuminate\Http\RedirectResponse
+    {
+        if($request->validated())
+        {
+            $result =  $this->$VARIABLE_NAME$Repository->store($request);
+        }else{
+            return redirect()->back()->with('error', __('ERROR!') );
+
+        }
+
+        if (!data_get($result, 'status')) {
+            return redirect()->back()->with('error', $result['message']);
+        }
+
+
+        return redirect()->back()->with('success', __('$CLASS_NAME$  Successfully added!') );
+    }
+
+    /**
+     * Display the specified resource.
+     */
+    public function show($CLASS_NAME$ $$VARIABLE_NAME$)
+    {
+
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit($id): \Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\Foundation\Application
+    {
+        $$VARIABLE_NAME$ = $CLASS_NAME$::findorFail($id);
+        return view('$VARIABLE_NAME$.edit', compact('$VARIABLE_NAME$'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Update$CLASS_NAME$Request $request,$id): \Illuminate\Http\RedirectResponse
+    {
+        $$VARIABLE_NAME$=$CLASS_NAME$::findorFail($id);
+        if($request->validated())
+        {
+             $result =  $this->$VARIABLE_NAME$Repository->update($request, $$VARIABLE_NAME$);
+        }else{
+            return redirect()->back()->with('error', __('ERROR!') );
+
+        }
+
+        if (!data_get($result, 'status')) {
+            return redirect()->back()->with('error', $result['message']);
+        }
+
+
+        return redirect()->back()->with('success', __('$CLASS_NAME$ Successfully Update!') );
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy($id): \Illuminate\Http\RedirectResponse
+    {
+        $$VARIABLE_NAME$ = $CLASS_NAME$::findorFail($id);
+        $result =  $this->$VARIABLE_NAME$Repository->destroy($$VARIABLE_NAME$);
+
+
+        if (!data_get($result, 'status')) {
+            return redirect()->back()->with('error', $result['message']);
+        }
+
+
+        return redirect()->back()->with('success', __('$CLASS_NAME$ Successfully Delete!') );
+    }
+
+}
