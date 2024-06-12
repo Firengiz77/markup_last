@@ -18,6 +18,15 @@ use App\Models\ProjectCategory;
 class FrontendController extends Controller
 {
 
+    public function index(){
+        $services = Service::take(6)->get();
+        $counter = Counter::get();
+        $clients = Partner::get();
+        $references = Reference::get();
+        $project = Project::take(6)->get();
+        return view('front.pages.index',compact('services','counter','clients','references','project'));
+    }
+
     public function about(){
         $about = About::first();
         $counter = Counter::get();
@@ -72,7 +81,7 @@ class FrontendController extends Controller
     }
     public function service_single($slug){
         $service = Service::where('slug->'.app()->getLocale(),$slug)->first();
-        return view('front.pages.service',compact('service'));
+        return view('front.pages.service_single',compact('service'));
     }
 
 

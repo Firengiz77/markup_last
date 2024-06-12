@@ -44,7 +44,7 @@ class RegisteredUserController extends Controller
             $lang = Utility::getValByName('default_language');
         }
         $langList = Utility::langList();
-        $lang = array_key_exists($lang, $langList) ? $lang : 'en';
+        $lang = array_key_exists($lang, $langList) ? $lang : 'az';
         if (empty($lang))
         {
         $lang = Utility::getValByName('default_language');
@@ -67,7 +67,7 @@ class RegisteredUserController extends Controller
     public function store(Request $request)
     {
         $settings = Utility::settings();
-        $lang = !empty($settings['default_language']) ? $settings['default_language'] : 'en';
+        $lang = !empty($settings['default_language']) ? $settings['default_language'] : 'az';
         if(Utility::getValByName('email_verification') == 'on'){
             if(isset($settings['RECAPTCHA_MODULE']) && $settings['RECAPTCHA_MODULE'] == 'yes')
             {

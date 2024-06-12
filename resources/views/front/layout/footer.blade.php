@@ -1,7 +1,6 @@
 
 </main>
 
-
 <!-- ==================== Start Footer ==================== -->
 
 <footer class="modern-footer pt-80">
@@ -21,9 +20,6 @@
                                 <a href="{{ $item->link }}" class="hover-anim"><i class="{{ $item->icon }} mr-10"></i> {{ $item->name }}</a>
                             </li>
                             @endforeach
-                    
-
-
                         </ul>
                     </div>
                 </div>

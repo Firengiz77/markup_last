@@ -59,7 +59,7 @@ class Project extends Model
 
 
     public function getCategory(){
-        return $this->hasOne(ProjectCategory::class,'category_id');
+        return $this->hasOne(ProjectCategory::class,'id','category_id');
     }
 
 
@@ -68,9 +68,5 @@ class Project extends Model
     {
         return $this->hasMany('App\Models\ProjectImage', 'project_id', 'id');
     }
-
-
-
-
 
 }

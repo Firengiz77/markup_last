@@ -32,6 +32,8 @@
     <!-- Core Style Css -->
     <link rel="stylesheet" href="{{ asset('/front/assets/css/style.css') }}">
 
+
+    @yield('css')
 </head>
 
 <body>

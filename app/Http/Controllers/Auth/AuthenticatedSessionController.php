@@ -75,7 +75,7 @@ class AuthenticatedSessionController extends Controller
 
         // $store=$user->store();
         $settings = Utility::settings();
-        $lang = !empty($settings['default_language']) ? $settings['default_language'] : 'en';
+        $lang = !empty($settings['default_language']) ? $settings['default_language'] : 'az';
         if (isset($user->is_active) && $user->is_active == 0 || isset($user->is_enable_login) && $user->is_enable_login == 0) {
             auth()->logout();
             return redirect('/login'.'/'.$lang)->with('status', __('Your Account has been Deactivated. Please contact your Site Admin.!'));
@@ -96,7 +96,7 @@ class AuthenticatedSessionController extends Controller
             $lang = Utility::getValByName('default_language');
         }
         $langList = Utility::langList();
-        $lang = array_key_exists($lang, $langList) ? $lang : 'en';
+        $lang = array_key_exists($lang, $langList) ? $lang : 'az';
         if (empty($lang))
         {
         $lang = Utility::getValByName('default_language');
