@@ -88,7 +88,7 @@
             <div class="container">
     
                 <!-- Logo -->
-               <a class="logo icon-img-100" href="index.html">
+               <a class="logo icon-img-100" href="{{ route('about') }}">
                     <img src="/public/{{  $main->header_logo }}" alt="logo222">
                 </a>
     
@@ -96,7 +96,7 @@
                 <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown">
-                            <a class="nav-link" data-toggle="dropdown" href="index.html" role="button"
+                            <a class="nav-link" data-toggle="dropdown" href="{{ route('about') }}" role="button"
                                 aria-haspopup="true" aria-expanded="false"><span class="rolling-text">Ana Səhifə</span></a>
                         </li>
 
@@ -107,32 +107,32 @@
                             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
                                 aria-haspopup="true" aria-expanded="false"><span class="rolling-text">Haqqımızda</span></a>
                             <ul class="dropdown-menu">
-                                <li class="dropdown-item"><a href="page-about2.html">Biz Kimik ?</a></li>
-                                <li class="dropdown-item"><a href="">Referanslar</a></li>
-                                <li class="dropdown-item"><a href="references.html">Müştərilər</a></li>
-                                <li><a class="dropdown-item" href="page-team.html">Our Team</a></li>
-                                <li><a class="dropdown-item" href="page-FAQS.html">FAQS</a></li>
+                                <li class="dropdown-item"><a href="{{ route(app()->getLocale().'.about') }}">Biz Kimik ?</a></li>
+                                <li class="dropdown-item"><a href="{{ route(app()->getLocale().'.reference') }}">Referanslar</a></li>
+                                <li class="dropdown-item"><a href="{{ route(app()->getLocale().'.client') }}">Müştərilər</a></li>
+                                <li><a class="dropdown-item" href="{{ route(app()->getLocale().'.team') }}">Our Team</a></li>
+                                <li><a class="dropdown-item" href="{{ route(app()->getLocale().'.faqs') }}">FAQS</a></li>
                             </ul>
                         </li>
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link" data-toggle="dropdown" href="portfolio.html" role="button"
+                            <a class="nav-link" data-toggle="dropdown" href="{{ route(app()->getLocale().'.projects') }}" role="button"
                                 aria-haspopup="true" aria-expanded="false"><span class="rolling-text">Portfolio</span></a>
                         </li>
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link" data-toggle="dropdown" href="page-services.html" role="button"
+                            <a class="nav-link" data-toggle="dropdown" href="{{ route(app()->getLocale().'.services') }}" role="button"
                                 aria-haspopup="true" aria-expanded="false"><span class="rolling-text">Xidmətlər</span></a>
                         </li>
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link" data-toggle="dropdown" href="blog-classic.html" role="button"
+                            <a class="nav-link" data-toggle="dropdown" href="{{ route(app()->getLocale().'.blogs') }}" role="button"
                                 aria-haspopup="true" aria-expanded="false"><span class="rolling-text">Bloglar</span></a>
                         </li>
 
 
                         <li class="nav-item">
-                            <a class="nav-link" href="page-contact3.html"><span class="rolling-text">Əlaqə</span></a>
+                            <a class="nav-link" href="{{ route(app()->getLocale().'.contact') }}"><span class="rolling-text">Əlaqə</span></a>
                         </li>
                     </ul>
                 </div>
@@ -147,7 +147,7 @@
     
         <div class="hamenu">
 
-            <a class="logo icon-img-100" href="index.html">
+            <a class="logo icon-img-100" href="{{ route('index') }}">
                 <img src="assets/imgs/logo-light.png" alt="logo">
             </a>
 
@@ -170,7 +170,7 @@
                                 
                                 <li>
                                     <div class="o-hidden">
-                                        <a href="index.html" class="link"><span class="fill-text"
+                                        <a href="{{ route('index') }}" class="link"><span class="fill-text"
                                                 data-text="Ana Səhifə">Ana Səhifə</span></a>
                                     </div>
                                 </li>
@@ -185,31 +185,31 @@
                                         <ul>
                                             <li>
                                                 <div class="o-hidden">
-                                                    <a href="index.html" class="link"><span class="fill-text"
+                                                    <a href="{{ route(app()->getLocale().'.about') }}" class="link"><span class="fill-text"
                                                             data-text="Biz Kimik?">Biz Kimik?</span></a>
                                                 </div>
                                             </li>
                                             <li>
                                                 <div class="o-hidden">
-                                                    <a href="index.html" class="link"><span class="fill-text"
+                                                    <a href="{{ route(app()->getLocale().'.reference') }}" class="link"><span class="fill-text"
                                                             data-text="Referanslar">Referanslar</span></a>
                                                 </div>
                                             </li>
                                             <li>
                                                 <div class="o-hidden">
-                                                    <a href="index.html" class="link"><span class="fill-text"
+                                                    <a href="{{ route(app()->getLocale().'.client') }}" class="link"><span class="fill-text"
                                                             data-text="Müştərilər">Müştərilər</span></a>
                                                 </div>
                                             </li>
                                             <li>
                                                 <div class="o-hidden">
-                                                    <a href="index.html" class="link"><span class="fill-text"
+                                                    <a href="{{ route(app()->getLocale().'.team') }}" class="link"><span class="fill-text"
                                                             data-text="Our Team">Our Team</span></a>
                                                 </div>
                                             </li>
                                             <li>
                                                 <div class="o-hidden">
-                                                    <a href="index.html" class="link"><span class="fill-text"
+                                                    <a href="{{ route(app()->getLocale().'.faqs') }}" class="link"><span class="fill-text"
                                                             data-text="FAQ">FAQ</span></a>
                                                 </div>
                                             </li>
@@ -220,21 +220,21 @@
 
                                 <li>
                                     <div class="o-hidden">
-                                        <a href="portfolio.html" class="link"><span class="fill-text"
+                                        <a href="{{ route(app()->getLocale().'.projects') }}" class="link"><span class="fill-text"
                                                 data-text="Portfolio">Portfolio</span></a>
                                     </div>
                                 </li>
 
                                 <li>
                                     <div class="o-hidden">
-                                        <a href="page-services.html" class="link"><span class="fill-text"
+                                        <a href="{{ route(app()->getLocale().'.services') }}" class="link"><span class="fill-text"
                                                 data-text="Xidmətlər">Xidmətlər</span></a>
                                     </div>
                                 </li>
 
                                 <li>
                                     <div class="o-hidden">
-                                        <a href="blog-classic.html" class="link"><span class="fill-text"
+                                        <a href="{{ route(app()->getLocale().'.blogs') }}" class="link"><span class="fill-text"
                                                 data-text="Bloglar">Bloglar</span></a>
                                     </div>
                                 </li>
@@ -243,7 +243,7 @@
 
                                 <li>
                                     <div class="o-hidden">
-                                        <a href="page-contact3.html" class="link"><span class="fill-text"
+                                        <a href="{{ route(app()->getLocale().'.contact') }}" class="link"><span class="fill-text"
                                                 data-text="Contact Us">Contact Us</span></a>
                                     </div>
                                 </li>
@@ -256,29 +256,24 @@
                         <div class="cont-info">
                             <div class="item mb-50">
                                 <h6 class="sub-title mb-15 opacity-7">Address</h6>
-                                <h5>541 Melville Geek, <br> Palo Alto, CA 94301</h5>
+                                <h5>{{ $contact->address }}</h5>
                             </div>
                             <div class="item mb-50">
                                 <h6 class="sub-title mb-15 opacity-7">Social Media</h6>
                                 <ul class="rest social-text">
+
+                                @foreach($links as $item)
                                     <li class="mb-10">
-                                        <a href="#0" class="hover-this"><span class="hover-anim">Facebook</span></a>
+                                        <a href="{{ $item->link }}" class="hover-this"><span class="hover-anim">{{ $item->name }}</span></a>
                                     </li>
-                                    <li class="mb-10">
-                                        <a href="#0" class="hover-this"><span class="hover-anim">Twitter</span></a>
-                                    </li>
-                                    <li class="mb-10">
-                                        <a href="#0" class="hover-this"><span class="hover-anim">LinkedIn</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="#0" class="hover-this"><span class="hover-anim">Instagram</span></a>
-                                    </li>
+                                @endforeach
+
                                 </ul>
                             </div>
                             <div class="item mb-40">
                                 <h6 class="sub-title mb-15 opacity-7">Contact Us</h6>
-                                <h5><a href="#0">Hello@email.com</a></h5>
-                                <h5 class="underline mt-10"><a href="#0">+1 840 841 25 69</a></h5>
+                                <h5><a href="mailto:{{ $contact->email }}">{{ $contact->email }}</a></h5>
+                                <h5 class="underline mt-10"><a href="tel:{{ str_replcae(' ','',$contact->phone) }}">{{ $contact->phone }}</a></h5>
                             </div>
                         </div>
                     </div>

@@ -34,10 +34,7 @@ foreach(Languages::all() as $lang){
     Route::get('/'.__('route.blogs',[],$lang->code), [FrontendController::class, 'blogs'])->name('blogs')->middleware(['XSS']);
     Route::get('/'.__('route.blog_single',[],$lang->code).'/{slug}', [FrontendController::class, 'blog_single'])->name(__($lang->code).'.blog_single')->middleware(['XSS']);
 
-
     Route::get('/'.__('route.services',[],$lang->code), [FrontendController::class, 'services'])->name('services')->middleware(['XSS']);
     Route::get('/'.__('route.service_single',[],$lang->code).'/{slug}', [FrontendController::class, 'service_single'])->name(__($lang->code).'.service_single')->middleware(['XSS']);
-
-
 
 }
